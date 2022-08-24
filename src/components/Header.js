@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 function Header() {
   return (
-    <Nav>
+    <Nav> 
         <Logo src="/images/logo.svg" />
       <NavMenu>
         <a>
