@@ -7,16 +7,16 @@ function Viewers() {
         <img src='/images/viewers-disney.png'/>
       </Wrap>
       <Wrap>
-        <img src='/images/viewers-pixar.png'/>
+        <img src='/images/viewers-pixar.png' alt=''/>
       </Wrap>
       <Wrap>
-        <img src='/images/viewers-marvel.png'/>
+        <img src='/images/viewers-marvel.png' alt=''/>
       </Wrap>
       <Wrap>
-        <img src='/images/viewers-starwars.png'/>
+        <img src='/images/viewers-starwars.png' alt=''/>
       </Wrap>
       <Wrap>
-        <img src='/images/viewers-national.png'/>
+        <img src='/images/viewers-national.png' alt=''/>
       </Wrap>
     </Container>
   )
