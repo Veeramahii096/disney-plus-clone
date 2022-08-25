@@ -62,6 +62,7 @@ height:30vh;
 min-height:170px;
 width:35vw;
 min-width:200px;
+margin-top:40px;
 img{
     width: 100%;
    
@@ -74,6 +75,7 @@ img{
 const Controls=styled.div`
 display:flex;
 align-items:center;
+margin-top:20px;
 `
 const PlayButton=styled.button`
 border-radius:4px;
@@ -125,10 +127,12 @@ color:rgb(249,249,249);
 font-size:15px;
 min-height:20px;
 min-top:26px;
+margin-top:20px
 `
 const Description=styled.div`
 line-height:1.4;
 font-size:20px;
 margin-top:16px;
 color:rgb(249,249,249);
+max-width:760px;
 `
