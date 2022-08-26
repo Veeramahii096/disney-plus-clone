@@ -2,11 +2,13 @@ import React,{useEffect,useState} from 'react'
 import styled from 'styled-components'
 import {useParams} from  "react-router-dom"
 import db from '../firebase';
-import { setMovie } from '../features/Movie/movieSlice';
+
+
+
 
 function Detail() {
-  const{id}=useParams();
-  const [movie,setMovie]=useState();
+  const{id}=useParams()
+  const [movie,setMovie]=useState({});
 
   useEffect(()=>{
     db.collection("movies")
@@ -18,7 +20,8 @@ function Detail() {
       }
     })
 
-  },[])
+  },[id])
+  
   
   
 
@@ -28,10 +31,10 @@ function Detail() {
               {movie &&(
                 <>
               <Background>
-              <img src={movie.backgroundImg} alt=''/>
+              <img src={movie.backgroundImg} alt={movie.title}/>
           </Background>
           <ImageTitle>
-              <img src={movie.titleImg} alt=''/>
+              <img src={movie.titleImg} alt= {movie.title}/>
           </ImageTitle>
           <Controls>
           <PlayButton>

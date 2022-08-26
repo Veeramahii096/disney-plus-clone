@@ -3,26 +3,15 @@ import styled from 'styled-components';
 import{auth,provider} from "../firebase";
 import {selectUserName,selectUserPhoto, setUserLogin,setSignOut} from "../features/user/userSlice";
 import{useSelector,useDispatch} from "react-redux"
-import {useHistory} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 
 function Header() {
   const dispatch=useDispatch();
-  const history=useHistory();
+  const navigate=useNavigate();
   const userName=useSelector(selectUserName);
   const userphoto=useSelector(selectUserPhoto);
   
-  useEffect(()=>{
-    auth.onAuthStateChanged(async(user)=>{
-      if(user){
-        dispatch(setUserLogin({
-          name:user.displayName,
-          email:user.email,
-          photo:user.photoURL
-        }))
-        history.push("/")
-      }
-    })
-  },[])
+  
    const signIn=()=>{
       auth.signInWithPopup(provider)
       .then((result)=>{
@@ -30,20 +19,38 @@ function Header() {
        dispatch(setUserLogin({
         name:user.displayName,
         email:user.email,
-        photo:user.photoURL
+        photo:user.photoURL,
       }
         
 
        ))
-       history.push('/')
+       navigate('/home')
       })
+
    }
+   useEffect(()=>{
+    auth.onAuthStateChanged(async(user)=>{
+    if(user){
+          dispatch(setUserLogin({
+            name:user.displayName,
+            email:user.email,
+            photo:user.photoURL
+          }))
+          navigate("/Home");
+
+          
+    }
+    
+      
+      
+    })
+  },[])
 
    const signOut=()=>{
     auth.signOut()
     .then(()=>{
       dispatch(setSignOut());
-      history.push("/login")
+      navigate("/login")
     })
    }
   return (
@@ -107,7 +114,12 @@ background:#090b13;
 display:flex;
 align-items:center;
 padding:0 36px;
-overflow-x:hidden;
+
+position: sticky;
+top: 0;
+z-index: 999;
+
+
 `
 const Logo=styled.img`
 width:80px;
@@ -117,6 +129,7 @@ display:flex;
 flex:1;
 margin-left:25px;
 align-items:center;
+
 a{
     display:flex;
     align-items:center;

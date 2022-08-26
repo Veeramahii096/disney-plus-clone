@@ -4,24 +4,30 @@ import ImgSlider from './ImgSlider'
 import Viewers from './Viewers'
 import Movies from './Movies'
 import db from '../firebase'
+
 import {useDispatch} from "react-redux" ;
 import {setMovies} from "../features/Movie/movieSlice"
 function Home() {
    const dispatch=useDispatch();
 
+
+
  useEffect(()=>{
  db.collection("movies").onSnapshot((snapshot)=>{
   let tempMovies=snapshot.docs.map((doc)=>{
     
-    return{
-      id:doc.id,...doc.data()
-    }
+    return{id:doc.id, ...doc.data()}
+    
   })
+ 
 
   dispatch(setMovies(tempMovies));
-  
+
  })
- },[])
+ 
+ },[]) 
+
+ 
 
   return (
     <Container>

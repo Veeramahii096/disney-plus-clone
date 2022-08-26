@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Header from './components/Header';
 import './App.css';
 import Home from './components/Home';
@@ -6,9 +7,8 @@ import Detail from './components/Detail';
 import Login from './components/Login';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -16,17 +16,18 @@ function App() {
     <div className="App">
       <Router>
       <Header/>
-      <Switch>
-        <Route path="/login">
-          <Login/>
+      <Routes>
+        <Route path="/login" element={ <Login/>}>
+         
         </Route>
-        <Route path ="/detail/:id">
-          <Detail/>
+        <Route path="/home" element={<Home/>}>
+        
         </Route>
-        <Route path="/">
-        <Home/>
+        <Route path ="/detail/:id" element={<Detail/>}>
+          
         </Route>
-      </Switch>
+       
+      </Routes>
       </Router>
       
      

@@ -5,17 +5,16 @@ import {useSelector} from "react-redux"
 import {Link} from "react-router-dom";
 function Movies() {
 const movies=useSelector(selectMovies);
-  console.log(movies);
 
   return (
     <Container>
       <h4>Recommended for you</h4>
       <Content>
         {movies &&
-         movies.map((movie)=>(
+         movies.map((movie,key)=>(
           <Wrap key={movie.id}>
             <Link to={`/detail/${movie.id}`}>
-              <img src={movie.cardImg} alt=''/>
+            <img src={movie.cardImg} alt=''/>
             </Link>
             </Wrap>
          ))
