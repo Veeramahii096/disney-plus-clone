@@ -1,33 +1,33 @@
 import React from 'react'
-import styled from 'styled-components'
-import {selectMovies} from "../features/Movie/movieSlice";
-import {useSelector} from "react-redux"
+import styled from 'styled-components';
+import {selectTrending} from "../features/Movie/movieSlice";
 import {Link} from "react-router-dom";
-function Movies() {
-const movies=useSelector(selectMovies);
+import {useSelector} from "react-redux"
+function Trending() {
 
+  const movies=useSelector(selectTrending);
   return (
     <Container>
-      <h4>Recommended for you</h4>
-      <Content>
-        {movies &&
-         movies.map((movie,key)=>(
-          <Wrap key={movie.id}>
-            <Link to={`/detail/${movie.id}`}>
-            <img src={movie.cardImg} alt=''/>
-            </Link>
-            </Wrap>
-         ))
-        
-        
-        }
-    
-      </Content>
-    </Container>
+    <h4>Trending</h4>
+    <Content>
+      {movies &&
+       movies.map((movie)=>(
+        <Wrap key={movie.id}>
+          <Link to={`/detail/${movie.id}`}>
+          <img src={movie.cardImg} alt={movie.title}/>
+          </Link>
+          </Wrap>
+       ))
+      
+      
+      }
+  
+    </Content>
+  </Container>
   )
 }
 
-export default Movies
+export default Trending
 
 const Container=styled.div`
 `
@@ -55,5 +55,4 @@ img{
 const Content=styled.div`
 display:grid;
 grid-gap:25px;
-grid-template-columns:repeat(4,minmax(0,1fr));
-`
+grid-template-columns:repeat(4,minmax(0,1fr));`

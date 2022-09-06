@@ -36,7 +36,7 @@ function Header() {
             email:user.email,
             photo:user.photoURL
           }))
-          navigate("/Home");
+          navigate("/home");
 
           
     }
@@ -50,7 +50,7 @@ function Header() {
     auth.signOut()
     .then(()=>{
       dispatch(setSignOut());
-      navigate("/login")
+      navigate("/")
     })
    }
   return (

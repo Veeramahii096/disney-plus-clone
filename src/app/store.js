@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore,getDefaultMiddleware } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import movieReducer from'../features/Movie/movieSlice';
 import userSlice from '../features/user/userSlice';
@@ -9,4 +9,8 @@ export const store = configureStore({
     movie:movieReducer,
     user:userSlice
   },
+  middleware: [...getDefaultMiddleware({
+    serializableCheck:false,
+  })],
+  
 });
