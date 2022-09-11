@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React,{useEffect} from 'react'
 import styled from 'styled-components'
 import ImgSlider from './ImgSlider'
@@ -66,33 +65,17 @@ function Home() {
       <Original/>
       <NewtoDisney/>
       <Trending/>
-=======
-import React from 'react'
-import styled from 'styled-components'
-
-function Home() {
-  return (
-    <Container>
-      Home
->>>>>>> 74885b1e1703e993d72d805187b8cc870c869ce9
     </Container>
   )
 }
 
-<<<<<<< HEAD
 export default Home 
-=======
-export default Home
->>>>>>> 74885b1e1703e993d72d805187b8cc870c869ce9
 
 const Container=styled.main`
 min-height:calc(100vh - 70px);
 padding:0 calc(3.5vw + 5px);
 position:relative;
-<<<<<<< HEAD
 overflow-x:hidden;
-=======
->>>>>>> 74885b1e1703e993d72d805187b8cc870c869ce9
 &:before{
     background:url("/images/home-background.png") center center / cover 
     no-repeat fixed;

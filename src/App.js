@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import Header from './components/Header';
 import './App.css';
 import Home from './components/Home';
@@ -12,15 +11,9 @@ import {
   Route,
 } from "react-router-dom";
 
-import Header from './components/Header';
-import './App.css';
-import Home from './components/Home';
-
-
 function App() {
   return (
     <div className="App">
-
       <Router>
       <Header/>
       <Routes>
@@ -38,10 +31,6 @@ function App() {
       </Router>
       
      
-
-      <Header/>
-      <Home/>
-
     </div>
   );
 }
