@@ -1,6 +1,6 @@
 # Live Preview
 
-https://veeragrocery.netlify.app/
+https://disneyclone001.netlify.app/
 
 
 # Getting Started with Create React App and Redux
